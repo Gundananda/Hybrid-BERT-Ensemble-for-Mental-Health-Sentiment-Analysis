@@ -65,17 +65,22 @@ Note: ROS can inflate minority‑class metrics if not carefully controlled; in t
 
 ```plaintext
 bert-ensemble-mental-health/
-├── notebooks/                     # End-to-end experiments
-│   └── bert_stacking_pipeline.ipynb
-├── src/
-│   ├── data.py                    # Load/split, ROS, leakage-safe transforms
-│   ├── features.py                # TF-IDF + BERT embedding builders
-│   ├── models.py                  # Base learners and stacking meta-learner
-│   ├── train.py                   # Training/CV/ablation
-│   └── evaluate.py                # Reports & metrics
-├── requirements.txt
 ├── README.md
-└── LICENSE
+├── LICENSE
+├── requirements.txt
+├── app.py                        # Inference/demo script (loads artifacts, predicts on text)
+├── bert_ensemble_code.ipynb      # End‑to‑end pipeline: preprocess → features → stacking → eval
+├── model_bertEnsemble.ipynb      # Training/CV + hyperparameter tuning; saves artifacts
+├── models_comparision.ipynb      # Baselines (LR/RF/LGBM/NB/AdaBoost/XGB) + metrics
+├── ablation-study.ipynb          # Ablations: TF‑IDF vs BERT vs Hybrid; ROS/SMOTE/Tomek
+├── data/                         # (ignored) place raw data here
+│   └── mental_health.csv         # example placeholder
+├── artifacts/                    # saved objects (created at run time)
+│   ├── tfidf_vectorizer.pkl
+│   ├── label2id.json
+│   └── stacking_xgb.joblib
+└── reports/                      # optional: CV logs, metrics, plots
+    └── results.json
 ```
 
 ---
