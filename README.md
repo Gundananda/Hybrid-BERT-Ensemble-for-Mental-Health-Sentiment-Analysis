@@ -37,7 +37,7 @@ Use cases include research on patient feedback, mental‑health monitoring, and 
 
 ---
 
-## Results (from the paper)
+## Results 
 
 - Accuracy: 93.21%
 - Macro F1: 93.24%
